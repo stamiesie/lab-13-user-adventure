@@ -5,7 +5,7 @@ const garbage = {
         top: '90%',
         left: '90%',
     },
-    image: 'garbage.jpg',
+    image: 'garbage.png',
     description:
         `You round the corner and head to your favorite spot: the trash can behind the house.  It must be trash day cuz the seagulls are all over it. You decide to:`,
     choices: [{
@@ -39,7 +39,7 @@ const backyard = {
         top: '50%',
         left: '50%',
     },
-    image: 'backyard.jpg',
+    image: 'backyard.png',
     description:
         `You see a half-eaten hotdog on the sidewalk, so you cut through the backyard to get it.  There you run into Jake the dog, the king-pin of the neighborhood. You decide to:`,
     choices: [{
@@ -73,9 +73,9 @@ const house = {
         top: '20%',
         left: '20%',
     },
-    image: 'house.jpg',
+    image: 'house.png',
     description:
-        `You sneak into the backdoor of the house nextdoor. The neighbor, making a sandwich, spots you inside. You decide to:`,
+        `You sneak into the back door of the house next door. The neighbor, making a sandwich, spots you inside. You decide to:`,
     choices: [{
         id: 'house-run',
         description: 'Jump out the window',
@@ -94,7 +94,7 @@ const house = {
         id: 'house-fight',
         description: 'Go for the sandwich!',
         result:
-            `It was a trap.  The neighbor knew your love of sandwiches and set up a sting.  You are taken away by animal control: -50 health points, -100 cool points.`,
+            `It was a trap. The neighbor knew your love of sandwiches and set up a sting.  You are taken away by animal control: -50 health points, -100 cool points.`,
         health: -50,
         coolness: -100
     }]
