@@ -1,17 +1,17 @@
 export function healthResult(health) {
     if (health <= 0) {
         return 'dead';
-    } else if (health < 20) {
+    } else if (health > 0 && health < 20) {
         return 'normal';
     } else {
         return 'good';
     }
 }
 
-export function coolResult(health) {
+export function coolResult(coolness) {
     if (coolness <= 0) {
         return 'uncool';
-    } else if (cool < 30) {
+    } else if (coolness < 30) {
         return 'normal';
     } else {
         return 'coolest';
