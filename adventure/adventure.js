@@ -75,7 +75,7 @@ form.addEventListener('submit', (e) => {
     localStorage.setItem('USER', JSON.stringify(user));
 
     // back to map button
-    backToMap.addEventListener('click', (e) => {
+    backToMap.addEventListener('click', () => {
         window.location = '../map';
         adventureId.disabled = true;
     });
