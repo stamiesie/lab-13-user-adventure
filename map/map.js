@@ -27,7 +27,8 @@ for (let adventure of adventures) {
 
     a.textContent = adventure.title;
     a.href = `../adventure/?=${adventure.id}`;
-
+    // - If the quest has been completed, cross it out
+    // - If the quest has NOT been completed it should be a link to the correct quest
     li.append(a);
     ul.append(li);
 
