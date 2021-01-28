@@ -6,6 +6,8 @@ const h1 = document.querySelector('h1');
 const p = document.querySelector('p');
 const img = document.querySelector('img');
 const form = document.querySelector('form');
+const resultsSpan = document.querySelector('#results-span');
+const backToMap = document.querySelector('#back-to-map');
 
 const USER = 'USER';
 
@@ -54,16 +56,17 @@ form.addEventListener('submit', (e) => {
 
     // on submit, recalculate user's health and cool points
     const selectionId = formData.get('choices');
-    console.log(selectionId);
 
     // get data from localStorage about this choice
     const choice = findById(adventure.choices, selectionId);
     const user = JSON.parse(localStorage.getItem('USER'));
-    console.log(adventure.choices);
 
     // update user points
     user.health += choice.health;
     user.coolness += choice.coolness;
+
+    // inject result message into hidden span
+    resultsSpan.textContent = choice.result;
 
     // use adventureId to update completed adventures dynamically
     user.completed[adventureId] = true;
@@ -71,7 +74,9 @@ form.addEventListener('submit', (e) => {
     // put new stats in localStorage (stringified)
     localStorage.setItem('USER', JSON.stringify(user));
 
-    // redirect to map page
-    window.location = '../map';
-
+    // back to map button
+    backToMap.addEventListener('click', (e) => {
+        window.location = '../map';
+        adventureId.disabled = true;
+    });
 });

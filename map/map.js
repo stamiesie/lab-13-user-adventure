@@ -5,7 +5,6 @@ const ul = document.querySelector('ul');
 
 // get user input from localStorage
 const user = JSON.parse(localStorage.getItem('USER'));
-console.log(user);
 // if all adventures are completed, redirect to results page (boolean)
 let completedAllAdventures = true;
 
@@ -15,7 +14,7 @@ for (let adventure of adventures) {
         completedAllAdventures = false;
     }
 }
-// 
+
 // Once user has done all adventures, redirect to the results page
 if (completedAllAdventures) {
     window.location = '../results';
