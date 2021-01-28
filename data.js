@@ -100,10 +100,10 @@ const house = {
     }]
 };
 
-export const quests = [
+export const adventures = [
     garbage,
     backyard,
     house,
 ];
 
-// export default quests;
+// export default adventures;
