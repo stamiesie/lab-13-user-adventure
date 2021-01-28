@@ -15,9 +15,9 @@ for (let adventure of adventures) {
         completedAllAdventures = false;
     }
 }
-
-// // If the user has <=0 health, redirect to the results page
-if (user.health <= 0 || completedAllAdventures) {
+// 
+// Once user has done all adventures, redirect to the results page
+if (completedAllAdventures) {
     window.location = '../results';
 }
 

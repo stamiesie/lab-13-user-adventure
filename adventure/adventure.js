@@ -7,9 +7,10 @@ const p = document.querySelector('p');
 const img = document.querySelector('img');
 const form = document.querySelector('form');
 
+const USER = 'USER';
+
 // get the adventure id from the URL
 const params = new URLSearchParams(window.location.search);
-
 
 // get the value of the id key in the URL query string
 const adventureId = params.get('adventure');
@@ -31,9 +32,46 @@ for (let choice of adventure.choices) {
     span.textContent = choice.description;
 
     radio.type = 'radio';
-    label.type = choice.id;
+    radio.value = choice.id;
     radio.name = 'choices';
 
     label.append(span, radio);
     form.append(label);
 }
+
+// submit button
+const button = document.createElement('button');
+button.textContent = 'Choose';
+
+form.append(button);
+
+// event listener
+form.addEventListener('submit', (e) => {
+    e.preventDefault();
+
+    // get user choice from form
+    const formData = new FormData(form);
+
+    // on submit, recalculate user's health and cool points
+    const selectionId = formData.get('choices');
+    console.log(selectionId);
+
+    // get data from localStorage about this choice
+    const choice = findById(adventure.choices, selectionId);
+    const user = JSON.parse(localStorage.getItem('USER'));
+    console.log(adventure.choices);
+
+    // update user points
+    user.health += choice.health;
+    user.coolness += choice.coolness;
+
+    // use adventureId to update completed adventures dynamically
+    user.completed[adventureId] = true;
+
+    // put new stats in localStorage (stringified)
+    localStorage.setItem('USER', JSON.stringify(user));
+
+    // redirect to map page
+    window.location = '../map';
+
+});
