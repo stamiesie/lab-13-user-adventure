@@ -1,3 +1,9 @@
+export const aliveMessages = {
+    dead: 'I\'m afraid you\'re dead',
+    normal: 'you\'re lucky to still be alive',
+    good: 'you\'re handing the streets like a pro',
+};
+
 export const healthyMessages = {
     uncool: 'But you live out your days with many regrets.',
     cool: 'Your Insta has like 150 followers.',

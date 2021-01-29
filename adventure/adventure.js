@@ -77,6 +77,5 @@ form.addEventListener('submit', (e) => {
     // back to map button
     backToMap.addEventListener('click', () => {
         window.location = '../map';
-        adventureId.disabled = true;
     });
 });

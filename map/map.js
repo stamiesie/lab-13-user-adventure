@@ -26,10 +26,13 @@ for (let adventure of adventures) {
 
     a.textContent = adventure.title;
     a.href = `../adventure/?adventure=${adventure.id}`;
+    if (user.completed[adventure.id] === true) {
+        a.href = "javascript:void(0)";
+        a.style.textDecoration = 'line-through';
+
+    }
     // - If the quest has been completed, cross it out
     // - If the quest has NOT been completed it should be a link to the correct quest
     li.append(a);
     ul.append(li);
-
-
 }

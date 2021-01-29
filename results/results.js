@@ -1,4 +1,4 @@
-import { healthyMessages, deadMessages } from './messages.js';
+import { healthyMessages, deadMessages, aliveMessages } from './messages.js';
 import { healthResult, coolResult } from './result-utils.js';
 
 // get user info from localStorage
@@ -12,12 +12,6 @@ const finalHealth = healthResult(user.health);
 
 // call coolResult with the users health score to get corresponding message from function
 const finalCool = coolResult(user.coolness);
-
-const aliveMessages = {
-    dead: 'I\'m afraid you are dead',
-    normal: 'you\'re lucky to still be alive',
-    good: 'you\'re handing the streets like a pro',
-};
 
 // go into result messages object and get corresponding message based on users scores
 const aliveMessage = aliveMessages[finalHealth];
@@ -38,3 +32,10 @@ const coolnessMessage = coolMessages[finalCool];
 const outcome = `Well, ${user.name} the ${user.animal}, ${aliveMessage}. ${coolnessMessage}`;
 
 resultMessage.textContent = outcome;
+
+const resetButton = document.getElementById('reset');
+
+resetButton.addEventListener('click', () => {
+    localStorage.clear();
+    window.location = '../';
+});
