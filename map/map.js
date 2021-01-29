@@ -27,7 +27,7 @@ for (let adventure of adventures) {
     a.textContent = adventure.title;
     a.href = `../adventure/?adventure=${adventure.id}`;
     if (user.completed[adventure.id] === true) {
-        a.href = "javascript:void(0)";
+        a.href = 'javascript:void(0)';
         a.style.textDecoration = 'line-through';
 
     }
