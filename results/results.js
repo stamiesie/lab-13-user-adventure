@@ -17,19 +17,19 @@ const finalCool = coolResult(user.coolness);
 const aliveMessage = aliveMessages[finalHealth];
 
 // if the user is dead, only display dead messages.  If healthy, only display the healthy messages
-let coolMessages = null;
+let lastMessage = null;
 
 if (finalHealth === 'dead') {
-    coolMessages = deadMessages;
+    lastMessage = deadMessages;
 } else {
-    coolMessages = healthyMessages;
+    lastMessage = healthyMessages;
 }
 
 // get coolness messages from the message object
-const coolnessMessage = coolMessages[finalCool];
+const coolMessage = lastMessage[finalCool];
 
 // create outcome message to inject into html
-const outcome = `Well, ${user.name} the ${user.animal}, ${aliveMessage}. ${coolnessMessage}`;
+const outcome = `Well, ${user.name} the ${user.animal}, ${aliveMessage}. ${coolMessage}`;
 
 resultMessage.textContent = outcome;
 

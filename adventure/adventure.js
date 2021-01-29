@@ -43,6 +43,7 @@ for (let choice of adventure.choices) {
 
 // submit button
 const button = document.createElement('button');
+button.classList.add('button');
 button.textContent = 'Choose';
 
 form.append(button);
